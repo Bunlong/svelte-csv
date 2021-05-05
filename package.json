@@ -1,0 +1,29 @@
+{
+  "name": "svelte-csv",
+  "version": "1.0.0",
+  "description": "Made with create-svelte-library",
+  "author": "Bunlong",
+  "license": "MIT",
+  "repository": "Bunlong/svelte-csv",
+  "svelte": "src/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "rollup": "^2.0.0",
+    "rollup-plugin-svelte": "^6.0.0",
+    "svelte": "^3.0.0"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}
