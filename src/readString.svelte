@@ -1,4 +1,4 @@
-<script context="module">
+<script context='module'>
   import PapaParse from 'papaparse';
 
   export function readString(str, options) {
