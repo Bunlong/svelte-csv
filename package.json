@@ -4,7 +4,14 @@
   "description": "svelte-csv is the fastest in-browser CSV (or delimited text) parser for Svelte. It is full of useful features such as CSVReader, CSVDownloader, readString, jsonToCSV, readRemoteFile, ... etc.",
   "author": "Bunlong",
   "license": "MIT",
-  "repository": "Bunlong/svelte-csv",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bunlong/svelte-csv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bunlong/svelte-csv.git/issues"
+  },
+  "homepage": "https://github.com/Bunlong/svelte-csv",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
