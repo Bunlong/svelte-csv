@@ -1,5 +1,13 @@
 <script>
-	import MyComponent from '../../../src/index.js';
+	import MyComponent, { readString } from '../../../src/index.js';
+	const str = `Column 1,Column 2,Column 3,Column 4
+1-1,1-2,1-3,1-4
+2-1,2-2,2-3,2-4
+3-1,3-2,3-3,3-4
+4,5,6,7`;
+
+const results = readString(str);
+console.log(results);
 </script>
 
 <style>
