@@ -1,6 +1,6 @@
 {
   "name": "svelte-csv",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "svelte-csv is the fastest in-browser CSV (or delimited text) parser for Svelte. It is full of useful features such as CSVReader, CSVDownloader, readString, jsonToCSV, readRemoteFile, ... etc.",
   "author": "Bunlong",
   "license": "MIT",
@@ -16,6 +16,7 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "rollup -c -w",
     "build": "rollup -c",
     "prepublishOnly": "npm run build"
   },
@@ -26,9 +27,6 @@
     "rollup-plugin-svelte": "^6.0.0",
     "svelte": "^3.0.0"
   },
-  "dependencies": {
-    "papaparse": "^5.3.0"
-  },
   "keywords": [
     "svelte",
     "svelte-csv",
@@ -37,5 +35,8 @@
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "papaparse": "^5.3.0"
+  }
 }
