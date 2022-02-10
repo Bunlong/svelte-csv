@@ -1,38 +1,56 @@
-import svelte from 'rollup-plugin-svelte';
-import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import { terser } from "rollup-plugin-terser";
+import analyze from 'rollup-plugin-analyzer';
+import autoPreprocess from 'svelte-preprocess';
+import bundleSize from 'rollup-plugin-bundle-size';
+import svelte from 'rollup-plugin-svelte';
+import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
-const name = pkg.name
-  .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
-  .replace(/^\w/, m => m.toUpperCase())
-  .replace(/-\w/g, m => m[1].toUpperCase());
+const production = !process.env.ROLLUP_WATCH;
+
+const { name } = pkg;
 
 export default {
-  input: 'src/svelte-csv.js',
+  input: 'src/index.js',
   output: [
-    // { file: pkg.module, 'format': 'esm', name },
-    // { file: pkg.main, 'format': 'umd', name },
-    // { file: pkg.main, format: 'cjs', name },
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-    },
     {
       file: pkg.module,
-      format: 'esm',
-      exports: 'named',
+      format: 'es',
+      sourcemap: true,
+      name
     },
+    {
+      file: pkg.main,
+      format: 'umd',
+      sourcemap: true,
+      name
+    }
   ],
-  external: ['svelte', 'papaparse'],
   plugins: [
-    babel({
-      exclude: 'node_modules/**'
+    svelte({
+      compilerOptions: {
+        // enable run-time checks when not in production
+        dev: !production,
+        // generate: production ? 'dom' : 'ssr',
+        hydratable: true
+      },
+      preprocess: autoPreprocess({
+        postcss: {
+          plugins: [require('autoprefixer')()]
+        }
+      }),
+      emitCss: false
     }),
+    resolve(),
     commonjs(),
-    svelte(),
-    terser()
-  ]
+    typescript(),
+    production && terser(),
+    production && analyze(),
+    production && bundleSize()
+  ],
+  watch: {
+    clearScreen: false
+  }
 };

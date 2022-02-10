@@ -1,11 +1,10 @@
 <script>
   import PapaParse from 'papaparse';
-
   export let data;
   export let filename = 'filename';
   export let type = 'link';
   export let bom = 2;
-  function download (data, filename, bom) {
+  function download(data, filename, bom) {
     const bomCode = bom ? '\ufeff' : '';
     let csvContent = null;
     if (typeof data === 'object') {
@@ -14,7 +13,7 @@
       csvContent = data;
     }
     const csvData = new Blob([`${bomCode}${csvContent}`], {
-      type: 'text/csv;charset=utf-8;',
+      type: 'text/csv;charset=utf-8;'
     });
     let csvURL = null;
     if (navigator.msSaveBlob) {
@@ -27,21 +26,16 @@
     link.setAttribute('download', `${filename}.csv`);
     link.click();
     link.remove();
-	}
+  }
 </script>
 
 {#if type === 'link'}
-  <span
-    on:click={download(data, filename, bom)}
-    class='link'
-  >
-    <slot></slot>
+  <span on:click={download(data, filename, bom)} class="link">
+    <slot />
   </span>
 {:else}
-  <button
-    on:click={download(data, filename, bom)}
-  >
-    <slot></slot>
+  <button on:click={download(data, filename, bom)}>
+    <slot />
   </button>
 {/if}
 
