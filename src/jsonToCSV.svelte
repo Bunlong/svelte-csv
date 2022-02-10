@@ -1,4 +1,4 @@
-<script context='module'>
+<script>
   import PapaParse from 'papaparse';
 
   export function jsonToCSV(json, options) {
