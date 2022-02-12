@@ -1,6 +1,6 @@
 # svelte-csv
 
-svelte-csv is the fastest in-browser CSV (or delimited text) parser for Svelte. It is full of useful features such as CSVReader, CSVDownloader, readString, jsonToCSV, readRemoteFile, ... etc.
+svelte-csv is the fastest in-browser CSV (or delimited text) parser for Svelte. It is full of useful features such as CSVDownloader, readString, jsonToCSV, readRemoteFile, CSVReader, ... etc.
 
 ## 🔧 Install
 
@@ -16,12 +16,29 @@ svelte-csv is available on yarn as well. It can be installed with the following 
 yarn add svelte-csv --save
 ```
 
+## ℹ️ Usage
+
+You need to install `papaparse` manually if you get error `'/node_modules/papaparse/papaparse.min.js?v=8573111b' does not provide an export named 'default'`.
+
+papaparse is available on npm. It can be installed with the following command:
+
+```
+npm install papaparse @types/papaparse --save
+```
+
+papaparse is available on yarn as well. It can be installed with the following command:
+
+```
+yarn add papaparse @types/papaparse --save
+```
+
 ## 📚 Useful Features
 
-* CSVDownloader
-* readString
-* readRemoteFile
-* jsonToCSV
+* [x] CSVDownloader
+* [x] readString
+* [x] readRemoteFile
+* [x] jsonToCSV
+* [ ] CSVReader
 
 ## 💡 Usage
 
