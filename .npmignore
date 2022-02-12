@@ -1,0 +1,9 @@
+# ***
+# *
+# * https://docs.npmjs.com/cli/v6/using-npm/developers
+# *
+# ***
+
+/src
+/supports
+.gitignore

@@ -189,6 +189,14 @@ const jsonData = `[
 const results = jsonToCSV(jsonData);
 ```
 
+## 📜 Changelog
+
+Latest version 1.2.5 (2022-02-12):
+
+  * Fix `'/node_modules/papaparse/papaparse.min.js?v=8573111b' does not provide an export named 'default`
+
+Details changes for each release are documented in the [CHANGELOG.md](https://github.com/Bunlong/svelte-csv/blob/master/CHANGELOG.md).
+
 ## ❗ Issues
 
 If you think any of the `svelte-csv` can be improved, please do open a PR with any updates and submit any issues. Also, I will continue to improve this, so you might want to watch/star this repository to revisit.
