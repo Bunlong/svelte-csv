@@ -29,7 +29,7 @@
     "format": "prettier --write --plugin-search-dir=. ./src",
     "lint": "tsc --noEmit && eslint ./src --ext .js --ext .svelte",
     "prepublish": "npm run dist && git add -A dist",
-    "postpublish": "git push && git push --tags",
+    "@postpublish": "git push && git push --tags",
     "test": "jest --maxWorkers=2 --verbose",
     "test:watch": "jest --maxWorkers=2 --verbose --watchAll",
     "version": "npm run dist && npm run docs && git add -A"
