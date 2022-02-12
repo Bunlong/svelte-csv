@@ -1,6 +1,6 @@
 {
   "name": "svelte-csv",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "dist/svelte-csv.js",
   "module": "dist/svelte-csv.es.js",
   "jsnext:main": "dist/svelte-csv.es.js",
