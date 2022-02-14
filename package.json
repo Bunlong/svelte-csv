@@ -1,6 +1,6 @@
 {
   "name": "svelte-csv",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "main": "dist/svelte-csv.js",
   "module": "dist/svelte-csv.es.js",
   "jsnext:main": "dist/svelte-csv.es.js",
@@ -28,7 +28,7 @@
     "build": "rollup -c",
     "format": "prettier --write --plugin-search-dir=. ./src",
     "lint": "tsc --noEmit && eslint ./src --ext .js --ext .svelte",
-    "prepublish": "npm run dist && git add -A dist",
+    "@prepublish": "npm run dist && git add -A dist",
     "@postpublish": "git push && git push --tags",
     "test": "jest --maxWorkers=2 --verbose",
     "test:watch": "jest --maxWorkers=2 --verbose --watchAll",
@@ -92,9 +92,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
   },
+  "browserslist": "last 2 versions",
   "dependencies": {
-    "@types/papaparse": "^5.3.2",
     "papaparse": "^5.3.1"
-  },
-  "browserslist": "last 2 versions"
+  }
 }

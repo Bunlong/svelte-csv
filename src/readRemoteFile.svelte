@@ -1,7 +1,7 @@
 <script>
-  import PapaParse from 'papaparse';
+  import * as Papa from 'papaparse';
 
   export function readRemoteFile(url, options) {
-    PapaParse.parse(url, Object.assign({}, { download: true }, options));
+    Papa.parse(url, Object.assign({}, { download: true }, options));
   }
 </script>
