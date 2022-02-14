@@ -1,5 +1,5 @@
 <script>
-  import { CSVDownloader } from 'svelte-csv';
+  import { CSVDownloader } from 'svelte-csv/src';
 </script>
 
 <CSVDownloader
