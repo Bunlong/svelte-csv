@@ -1,6 +1,6 @@
 {
   "name": "svelte-csv",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "dist/svelte-csv.js",
   "module": "dist/svelte-csv.es.js",
   "jsnext:main": "dist/svelte-csv.es.js",
@@ -94,6 +94,7 @@
   },
   "browserslist": "last 2 versions",
   "dependencies": {
+    "@types/papaparse": "^5.3.1",
     "papaparse": "^5.3.1"
   }
 }

@@ -1,7 +1,7 @@
 <script>
-  import * as Papa from 'papaparse';
+  import PapaParse from 'papaparse';
 
   export function readString(str, options) {
-    return Papa.parse(str, options);
+    return PapaParse.parse(str, options);
   }
 </script>

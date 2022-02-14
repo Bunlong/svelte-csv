@@ -16,20 +16,19 @@ svelte-csv is available on yarn as well. It can be installed with the following 
 yarn add svelte-csv --save
 ```
 
-## ℹ️ Usage
+## ℹ️ Note on usage with SvelteKit
 
-You need to install `papaparse` manually if you get error `'/node_modules/papaparse/papaparse.min.js?v=8573111b' does not provide an export named 'default'`.
-
-papaparse is available on npm. It can be installed with the following command:
+If you are using `svelte-csv` with SvelteKit, you need to configure `svelte.config.js` as follows:
 
 ```
-npm install papaparse @types/papaparse --save
-```
-
-papaparse is available on yarn as well. It can be installed with the following command:
-
-```
-yarn add papaparse @types/papaparse --save
+  kit: {
+    // ...
+    vite: {
+      optimizeDeps: {
+        include: ['papaparse']
+      }
+    }
+  }
 ```
 
 ## 📚 Useful Features
@@ -191,7 +190,7 @@ const results = jsonToCSV(jsonData);
 
 ## 📜 Changelog
 
-Latest version 1.2.5 (2022-02-12):
+Latest version 1.2.8 (2022-02-15):
 
   * Fix `'/node_modules/papaparse/papaparse.min.js?v=8573111b' does not provide an export named 'default`
 

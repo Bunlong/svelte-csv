@@ -1,5 +1,5 @@
 <script>
-  import Papa from 'papaparse';
+  import PapaParse from 'papaparse';
   export let data;
   export let filename = 'filename';
   export let type = 'link';
@@ -7,8 +7,8 @@
   function download(data, filename, bom) {
     const bomCode = bom ? '\ufeff' : '';
     let csvContent = null;
-    if (typeof data === 'object' && Papa) {
-      csvContent = Papa.unparse(data);
+    if (typeof data === 'object') {
+      csvContent = PapaParse.unparse(data);
     } else {
       csvContent = data;
     }

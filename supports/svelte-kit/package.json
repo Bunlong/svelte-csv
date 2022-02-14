@@ -29,6 +29,6 @@
   },
   "type": "module",
   "dependencies": {
-    "svelte-csv": "file:../.."
+    "svelte-csv": "^1.2.8"
   }
 }

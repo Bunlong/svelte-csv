@@ -1,7 +1,7 @@
 <script>
-  import * as Papa from 'papaparse';
+  import PapaParse from 'papaparse';
 
   export function jsonToCSV(json, options) {
-    return Papa.unparse(json, options);
+    return PapaParse.unparse(json, options);
   }
 </script>
