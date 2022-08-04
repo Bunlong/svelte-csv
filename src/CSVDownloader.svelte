@@ -30,11 +30,11 @@
 </script>
 
 {#if type === 'link'}
-  <span class="$$props.class" on:click={download(data, filename, bom)} class="link">
+  <span class={$$props.class} on:click={download(data, filename, bom)} class="link">
     <slot />
   </span>
 {:else}
-  <button class="$$props.class" on:click={download(data, filename, bom)}>
+  <button class={$$props.class} on:click={download(data, filename, bom)}>
     <slot />
   </button>
 {/if}
