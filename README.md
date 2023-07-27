@@ -84,7 +84,7 @@ import { CSVDownloader } from 'svelte-csv';
 </CSVDownloader>
 ```
 
-#### Link
+#### Button
 
 ```javascript
 import { CSVDownloader } from 'svelte-csv';
@@ -123,6 +123,33 @@ import { CSVDownloader } from 'svelte-csv';
   Download
 </CSVDownloader>
 ```
+
+**Option**
+
+It is possible to supply options through `options={optionObj}`. For available options, 
+see the [papaparse docs](https://www.papaparse.com/docs#unparse-config-default)
+```javascript
+import { CSVDownloader } from 'svelte-csv';
+
+<CSVDownloader
+  data={[]}
+  options={
+      {
+          quotes: false, //or array of booleans
+          quoteChar: '"',
+          escapeChar: '"',
+          delimiter: ";",
+          header: true,
+          newline: "\r\n",
+          skipEmptyLines: false, //other option is 'greedy', meaning skip delimiters, quotes, and whitespace.
+          columns: null //or array of strings
+      }
+  }
+>
+  Download
+</CSVDownloader>
+```
+
 
 ### 🎀 readString
 
