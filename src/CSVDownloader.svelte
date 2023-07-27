@@ -32,11 +32,11 @@
 </script>
 
 {#if type === 'link'}
-  <span on:click={download(data, filename, bom)} class="link">
+  <span class={$$props.class + " link"} on:click={download(data, filename, bom)}>
     <slot />
   </span>
 {:else}
-  <button on:click={download(data, filename, bom)}>
+  <button class={$$props.class} on:click={download(data, filename, bom)}>
     <slot />
   </button>
 {/if}
