@@ -4,11 +4,13 @@
   export let filename = 'filename';
   export let type = 'link';
   export let bom = 2;
+  export let options = undefined;
+
   function download(data, filename, bom) {
     const bomCode = bom ? '\ufeff' : '';
     let csvContent = null;
     if (typeof data === 'object') {
-      csvContent = PapaParse.unparse(data);
+      csvContent = PapaParse.unparse(data, options);
     } else {
       csvContent = data;
     }
