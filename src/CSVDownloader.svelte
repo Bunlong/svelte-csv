@@ -1,10 +1,12 @@
-<script>
+<script lang="ts">
   import PapaParse from 'papaparse';
+  import type { ComponentType } from './CSVDownloader';
+
   export let data;
-  export let filename = 'filename';
-  export let type = 'link';
-  export let bom = 2;
-  export let options = undefined;
+  export let filename: string = 'filename';
+  export let type: ComponentType = 'link';
+  export let bom: number = 2;
+  export let options: PapaParse.UnparseConfig | undefined = undefined;
 
   function download(data, filename, bom) {
     const bomCode = bom ? '\ufeff' : '';
@@ -32,11 +34,11 @@
 </script>
 
 {#if type === 'link'}
-  <span class={$$props.class + " link"} on:click={download(data, filename, bom)}>
+  <span class={$$props.class + " link"} on:click={() => download(data, filename, bom)}>
     <slot />
   </span>
 {:else}
-  <button class={$$props.class} on:click={download(data, filename, bom)}>
+  <button class={$$props.class} on:click={() => download(data, filename, bom)}>
     <slot />
   </button>
 {/if}
